@@ -74,9 +74,6 @@ jobs:
       shell: bash
 
     - name: Tests
-      env:
-        SLACK_CHANNEL_ID: ${{secrets.SLACK_CHANNEL_ID}}
-        SLACK_TOKEN: ${{secrets.SLACK_TOKEN}}
       run: |
         coverage run --source lit_slack -m py.test lit_slack tests -v --junitxml=junit/test-results-${{ runner.os }}-${{ matrix.python-version }}.xml
 

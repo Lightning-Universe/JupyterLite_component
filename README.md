@@ -1,17 +1,19 @@
-<!---:lai-name: Slack Messenger--->
+<!---:lai-name: JupyterLite--->
 
 <div align="center">
 <img src="https://pl-bolts-doc-images.s3.us-east-2.amazonaws.com/lai.png" width="200px">
 
-A Lightning component to send a message on Slack
+A Lightning component to launch a JupyterLite instance
 ______________________________________________________________________
 
-![Tests](https://github.com/PyTorchLightning/LAI-slack-messenger/actions/workflows/ci-testing.yml/badge.svg)
+![Tests](https://github.com/Lightning-AI/LAI-jupyterlite-Component/actions/workflows/ci-testing.yml/badge.svg)
 
 </div>
 
 # About
-This component lets you send a message on Slack from a Lightning app.
+
+This component lets you launch a JupyterLite instance, which provides a way to serve Jupyter Notebooks completely in the
+browser.
 
 
 ----
@@ -19,32 +21,34 @@ This component lets you send a message on Slack from a Lightning app.
 ## Use the component
 
 <!---:lai-use:--->
+
 ```python
 import lightning as L
-from lit_slack import SlackMessenger
+from lit_jupyterlite import JupyterLite
+
 
 class YourComponent(L.LightningFlow):
     def __init__(self):
         super().__init__()
-        self.slack_messenger = SlackMessenger(
-            token='a-long-token', 
-            channel_id='A03CB4A6AK7'
-        )
+        self.jupyter_lite = JupyterLite()
 
     def run(self):
-        self.slack_messenger.send_message('hello from ⚡ lit slack ⚡')
-        
+        self.jupyter_lite.run()
+
+
 app = L.LightningApp(YourComponent())
 
 ```
 
 ## install
+
 Use these instructions to install:
 
 <!---:lai-install:--->
+
 ```bash
-git clone https://github.com/PyTorchLightning/LAI-slack-messenger.git
-cd LAI-slack-messenger
+git clone https://github.com/Lightning-AI/LAI-jupyterlite-Component.git
+cd LAI-jupyterlite-Component
 pip install -r requirements.txt
 pip install -e .
 ```
