@@ -1,3 +1,5 @@
+import os
+
 from lightning import LightningApp, LightningFlow
 
 from lit_jupyterlite.component import JupyterLite
@@ -6,7 +8,8 @@ from lit_jupyterlite.component import JupyterLite
 class Demo(LightningFlow):
     def __init__(self) -> None:
         super().__init__()
-        self.lite = JupyterLite()
+        os.makedirs("jupyter-contents", exist_ok=True)
+        self.lite = JupyterLite("jupyter-contents")
 
     def run(self):
         self.lite.run()

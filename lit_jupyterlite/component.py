@@ -18,7 +18,7 @@ class JupyterLite(L.LightningWork):
 
     def __init__(self, contents: Optional[str] = None, **kwargs):
         super().__init__(parallel=True, **kwargs)
-        contents = contents or "./"
+        contents = contents or os.getcwd()
         assert os.path.exists(contents), f"{contents} not exist at {os.getcwd()}"
         self.contents = contents
 
