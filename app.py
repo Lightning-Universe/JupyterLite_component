@@ -18,5 +18,5 @@ class Demo(LightningFlow):
         return [{"name": "lite", "content": self.lite.url}]
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app = LightningApp(Demo())
