@@ -13,7 +13,8 @@ class JupyterLite(L.LightningWork):
 
     https://jupyterlite.readthedocs.io/en/latest/
 
-    contents: folder location to be copied while building jupyter lite. This will appear in the Jupyterlab.
+    contents: Folder location to be copied while building jupyter lite. The provided folder will be visible in the
+    Jupyter file viewer.
     """
 
     def __init__(self, contents: Optional[str] = None, **kwargs):
