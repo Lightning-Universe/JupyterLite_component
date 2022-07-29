@@ -68,14 +68,14 @@ jobs:
       run: |
         python --version
         pip --version
-        pip install --requirement requirements.txt --upgrade --quiet --find-links https://download.pytorch.org/whl/cpu/torch_stable.html
+        pip install --requirement requirements.txt --quiet
         pip install --requirement tests/requirements.txt --quiet
         pip list
       shell: bash
 
     - name: Tests
       run: |
-        coverage run --source lit_slack -m py.test lit_slack tests -v --junitxml=junit/test-results-${{ runner.os }}-${{ matrix.python-version }}.xml
+        coverage run --source lai_jupyterlite -m py.test lai_jupyterlite tests -v --junitxml=junit/test-results-${{ runner.os }}-${{ matrix.python-version }}.xml
 
     - name: Statistics
       if: success()

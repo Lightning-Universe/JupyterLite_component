@@ -3,12 +3,12 @@ from time import sleep
 
 import requests
 
-from lit_jupyterlite.component import JupyterLite
+from lai_jupyterlite.component import JupyterLite
 
 
-def test_run():
-    jupyter = JupyterLite(port=8080)
+def test_run(tmp_path):
+    jupyter = JupyterLite(port=8080, contents=str(tmp_path))
     thread = Thread(target=jupyter.run, daemon=True)
     thread.start()
-    sleep(5)
-    assert requests.get("http://localhost:8080").status_code == 200
+    sleep(10)
+    assert requests.get("http://0.0.0.0:8080").status_code == 200

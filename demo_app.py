@@ -2,7 +2,7 @@ import os
 
 from lightning import LightningApp, LightningFlow
 
-from lit_jupyterlite.component import JupyterLite
+from lai_jupyterlite.component import JupyterLite
 
 
 class Demo(LightningFlow):
