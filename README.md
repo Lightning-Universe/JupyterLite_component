@@ -12,13 +12,50 @@ ______________________________________________________________________
 
 # About
 
-This component lets you launch a JupyterLite instance, which provides a way to serve Jupyter Notebooks completely in the
+This component lets you launch a [JupyterLite](https://jupyterlite.readthedocs.io/en/latest/) instance, which provides a
+way to serve Jupyter Notebooks completely in the
 browser.
+
+## How is it different from Jupyter Lab?
+
+JupyterLite runs completely in the browser but JupyterLab needs a server to launch and run.
+> At this moment not all the usual features available in JupyterLab and the Classic Notebook will work with JupyterLite,
+> but many already do!
+
+To learn more about JupyterLite please visit the
+official [JupyterLite documentation](https://jupyterlite.readthedocs.io/en/latest/).
+
 
 
 ----
 
-## Use the component
+## install
+
+Use these instructions to install:
+
+<!---:lai-install:--->
+
+### Using Lightning CLI
+
+``` bash
+lightning install component lightning/jupyterlite
+```
+
+### Install from GitHub repository
+
+```bash
+git clone https://github.com/Lightning-AI/LAI-jupyterlite-Component.git
+cd LAI-jupyterlite-Component
+pip install -r requirements.txt
+pip install -e .
+```
+
+## How to use the component
+
+To launch a Jupyter Lite instance in your app, you need to create an object of `JupyterLite` class and call the run
+method in the flow.
+
+### Example
 
 <!---:lai-use:--->
 
@@ -38,17 +75,4 @@ class YourComponent(L.LightningFlow):
 
 app = L.LightningApp(YourComponent())
 
-```
-
-## install
-
-Use these instructions to install:
-
-<!---:lai-install:--->
-
-```bash
-git clone https://github.com/Lightning-AI/LAI-jupyterlite-Component.git
-cd LAI-jupyterlite-Component
-pip install -r requirements.txt
-pip install -e .
 ```
