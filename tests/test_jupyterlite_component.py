@@ -6,8 +6,8 @@ import requests
 from lai_jupyterlite.component import JupyterLite
 
 
-def test_run():
-    jupyter = JupyterLite(port=8080)
+def test_run(tmp_path):
+    jupyter = JupyterLite(port=8080, contents=str(tmp_path))
     thread = Thread(target=jupyter.run, daemon=True)
     thread.start()
     sleep(5)
