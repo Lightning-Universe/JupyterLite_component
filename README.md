@@ -24,7 +24,7 @@ browser.
 
 ```python
 import lightning as L
-from lit_jupyterlite import JupyterLite
+from lai_jupyterlite import JupyterLite
 
 
 class YourComponent(L.LightningFlow):

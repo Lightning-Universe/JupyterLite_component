@@ -3,7 +3,7 @@ from time import sleep
 
 import requests
 
-from lit_jupyterlite.component import JupyterLite
+from lai_jupyterlite.component import JupyterLite
 
 
 def test_run():
