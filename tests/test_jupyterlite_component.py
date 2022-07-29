@@ -11,4 +11,4 @@ def test_run(tmp_path):
     thread = Thread(target=jupyter.run, daemon=True)
     thread.start()
     sleep(10)
-    assert requests.get("http://localhost:8080").status_code == 200
+    assert requests.get("http://0.0.0.0:8080").status_code == 200
