@@ -68,6 +68,7 @@ jobs:
       run: |
         python --version
         pip --version
+        pip install --requirement requirements.txt --quiet
         pip install --requirement tests/requirements.txt --quiet
         pip list
       shell: bash
