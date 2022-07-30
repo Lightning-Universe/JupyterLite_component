@@ -1,3 +1,4 @@
+import random
 from threading import Thread
 from time import sleep
 
@@ -7,8 +8,9 @@ from lai_jupyterlite.component import JupyterLite
 
 
 def test_run(tmp_path):
-    jupyter = JupyterLite(port=8080, contents=str(tmp_path))
+    port = int("80" + str(random.randrange(10, 99)))
+    jupyter = JupyterLite(port=port, contents=str(tmp_path))
     thread = Thread(target=jupyter.run, daemon=True)
     thread.start()
     sleep(10)
-    assert requests.get("http://0.0.0.0:8080").status_code == 200
+    requests.get(f"http://0.0.0.0:{port}").raise_for_status()
