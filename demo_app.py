@@ -5,7 +5,7 @@ from lightning import LightningApp, LightningFlow
 from lai_jupyterlite.component import JupyterLite
 
 
-class Demo(LightningFlow):
+class DemoApp(LightningFlow):
     def __init__(self) -> None:
         super().__init__()
         os.makedirs("jupyter-contents", exist_ok=True)
@@ -19,4 +19,4 @@ class Demo(LightningFlow):
 
 
 if __name__ == "__main__":
-    app = LightningApp(Demo())
+    app = LightningApp(DemoApp())
