@@ -9,8 +9,8 @@ from lai_jupyterlite.component import JupyterLite
 
 def test_run(tmp_path):
     port = int("80" + str(random.randrange(10, 99)))
-    jupyter = JupyterLite(port=port, contents=str(tmp_path))
+    jupyter = JupyterLite(host="localhost", port=port, contents=str(tmp_path))
     thread = Thread(target=jupyter.run, daemon=True)
     thread.start()
     sleep(10)
-    requests.get(f"http://0.0.0.0:{port}").raise_for_status()
+    requests.get(f"http://localhost:{port}").raise_for_status()
