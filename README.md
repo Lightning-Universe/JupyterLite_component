@@ -64,7 +64,7 @@ import lightning as L
 from lai_jupyterlite import JupyterLite
 
 
-class YourComponent(L.LightningFlow):
+class YourApp(L.LightningFlow):
     def __init__(self):
         super().__init__()
         self.jupyter_lite = JupyterLite()
@@ -73,6 +73,6 @@ class YourComponent(L.LightningFlow):
         self.jupyter_lite.run()
 
 
-app = L.LightningApp(YourComponent())
+app = L.LightningApp(YourApp())
 
 ```
