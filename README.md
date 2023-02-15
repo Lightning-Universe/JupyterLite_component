@@ -7,6 +7,8 @@ A Lightning component to launch a JupyterLite instance
 
 ______________________________________________________________________
 
+[![Lightning](https://img.shields.io/badge/-Lightning-792ee5?logo=pytorchlightning&logoColor=white)](https://lightning.ai)
+![license](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
 ![Tests](https://github.com/Lightning-AI/LAI-jupyterlite-Component/actions/workflows/ci-testing.yml/badge.svg)
 
 </div>
