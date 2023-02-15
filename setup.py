@@ -6,10 +6,9 @@ from typing import List
 from setuptools import find_packages, setup
 
 
-def _load_requirements(
-    path_dir: str, file_name: str = "requirements.txt", comment_char: str = "#"
-) -> List[str]:
+def _load_requirements(path_dir: str, file_name: str = "requirements.txt", comment_char: str = "#") -> List[str]:
     """Load requirements from a file.
+
     >>> _load_requirements(_PATH_ROOT)
     ['numpy...', 'torch..."]
     """
@@ -22,12 +21,7 @@ def _load_requirements(
             char_idx = min(ln.index(ch) for ch in comment_char)
             ln = ln[:char_idx].strip()
         # skip directly installed dependencies
-        if (
-            ln.startswith("http")
-            or ln.startswith("git")
-            or ln.startswith("-r")
-            or "@" in ln
-        ):
+        if ln.startswith("http") or ln.startswith("git") or ln.startswith("-r") or "@" in ln:
             continue
         if ln:  # if requirement is not empty
             reqs.append(ln)
@@ -35,9 +29,7 @@ def _load_requirements(
 
 
 _PATH_ROOT = os.path.realpath(os.path.dirname(__file__))
-BASE_REQUIREMENTS = _load_requirements(
-    path_dir=_PATH_ROOT, file_name="requirements.txt"
-)
+BASE_REQUIREMENTS = _load_requirements(path_dir=_PATH_ROOT, file_name="requirements.txt")
 
 setup(
     name="lai_jupyterlite",

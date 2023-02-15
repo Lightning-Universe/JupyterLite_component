@@ -4,6 +4,7 @@
 <img src="https://pl-bolts-doc-images.s3.us-east-2.amazonaws.com/lai.png" width="200px">
 
 A Lightning component to launch a JupyterLite instance
+
 ______________________________________________________________________
 
 ![Tests](https://github.com/Lightning-AI/LAI-jupyterlite-Component/actions/workflows/ci-testing.yml/badge.svg)
@@ -19,15 +20,14 @@ browser.
 ## How is it different from Jupyter Lab?
 
 JupyterLite runs completely in the browser but JupyterLab needs a server to launch and run.
+
 > At this moment not all the usual features available in JupyterLab and the Classic Notebook will work with JupyterLite,
 > but many already do!
 
 To learn more about JupyterLite please visit the
 official [JupyterLite documentation](https://jupyterlite.readthedocs.io/en/latest/).
 
-
-
-----
+______________________________________________________________________
 
 ## install
 
@@ -37,7 +37,7 @@ Use these instructions to install:
 
 ### Using Lightning CLI
 
-``` bash
+```bash
 lightning install component lightning/jupyterlite
 ```
 
@@ -74,5 +74,4 @@ class YourApp(L.LightningFlow):
 
 
 app = L.LightningApp(YourApp())
-
 ```
