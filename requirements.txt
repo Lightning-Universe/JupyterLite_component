@@ -1,4 +1,4 @@
-jupyterlite==0.1.0b18
+jupyterlite==0.1.0b22
 tornado==6.2
 jupyterlab-server==2.19.0
 lightning>=1.9.0, <2.0.0
