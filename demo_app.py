@@ -1,6 +1,6 @@
 import os
 
-from lightning import LightningApp, LightningFlow
+from lightning.app import LightningApp, LightningFlow
 
 from lai_jupyterlite.component import JupyterLite
 
